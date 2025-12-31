@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Premium Tech Store - Experience the future of shopping with secure Razorpay payments" />
+  <title>TechVault | Premium Electronics Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <a href="/" class="logo">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">TechVault</span>
+        </a>
+        <nav class="nav">
+          <a href="/" class="nav-link">Products</a>
+          <a href="/about.html" class="nav-link">About</a>
+          <a href="/contact.html" class="nav-link">Contact</a>
+          <a href="/privacy.html" class="nav-link">Privacy</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <div class="hero-badge">🔥 New Arrival</div>
+        <h1 class="hero-title">Premium Wireless<br /><span class="gradient-text">Headphones Pro</span></h1>
+        <p class="hero-desc">Experience immersive sound with active noise cancellation, 40-hour battery life, and
+          premium comfort. Perfect for music lovers and professionals.</p>
+        <div class="hero-price">
+          <span class="price-original">₹599</span>
+          <span class="price-current">₹299</span>
+          <span class="price-badge">50% OFF</span>
+        </div>
+        <button class="btn-primary" id="buyBtn">
+          <span class="btn-icon">🛒</span>
+          Buy Now with Razorpay
+        </button>
+        <div class="trust-badges">
+          <span class="badge">🔒 Secure Payment</span>
+          <span class="badge">🚚 Free Delivery</span>
+          <span class="badge">↩️ 30-Day Return</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <div class="feature-card">
+          <div class="feature-icon">🎵</div>
+          <h3>Hi-Fi Audio</h3>
+          <p>40mm custom drivers deliver studio-quality sound</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔇</div>
+          <h3>ANC Technology</h3>
+          <p>Block out the world with active noise cancellation</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔋</div>
+          <h3>40hr Battery</h3>
+          <p>All-day listening without worrying about charging</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Bluetooth 5.3</h3>
+          <p>Seamless connectivity with all your devices</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>© 2024 TechVault. Demo Store for Razorpay Integration.</p>
+        <p class="payment-info">Powered by <span class="razorpay-logo">Razorpay</span></p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal" id="successModal">
+    <div class="modal-content success">
+      <div class="modal-icon">✅</div>
+      <h2>Payment Successful!</h2>
+      <p>Thank you for your purchase. Your order has been confirmed.</p>
+      <div class="order-details">
+        <p><strong>Order ID:</strong> <span id="orderId">-</span></p>
+        <p><strong>Payment ID:</strong> <span id="paymentId">-</span></p>
+      </div>
+      <button class="btn-primary" onclick="closeModal()">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- Error Modal -->
+  <div class="modal" id="errorModal">
+    <div class="modal-content error">
+      <div class="modal-icon">❌</div>
+      <h2>Payment Failed</h2>
+      <p id="errorMessage">Something went wrong. Please try again.</p>
+      <button class="btn-primary" onclick="closeModal()">Try Again</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
